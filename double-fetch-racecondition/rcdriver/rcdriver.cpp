@@ -93,10 +93,11 @@ NTSTATUS RcIoCtl(PDEVICE_OBJECT DeviceObject,PIRP Irp)
 				return status;
 			}
 			num += ( Input->field1 ^ Input->field3 ) - ( Input->field4 + 0x7780 ); 
-			//The field is read a second time from user-mode memory (ustruct->UserAddress)
-			Addr = ustruct->UserAddress;
-			/*write the result to the user-mode address*/
-			*Addr = num;
+			/*
+			The field is read a second time from user-mode memory (ustruct->UserAddress).
+			Write the result to the user-mode address
+			*/
+			*ustruct->UserAddress = num;
 		}
 	}
 	Irp->IoStatus.Status = STATUS_SUCCESS;
