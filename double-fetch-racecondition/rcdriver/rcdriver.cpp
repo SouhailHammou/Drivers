@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "RaceCondition.h"
 #include "structs.h"
 extern "C" NTSTATUS DriverEntry(IN PDRIVER_OBJECT DriverObject, IN PUNICODE_STRING  RegistryPath);
 NTSTATUS RcIoCtl(PDEVICE_OBJECT DeviceObject,PIRP Irp);
