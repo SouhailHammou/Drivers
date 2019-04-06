@@ -7,4 +7,4 @@ This simple driver does the following :
    - The kernel-mode APC is delivered as soon as the IRQL drops below APC_LEVEL in the target thread in which we allocate executable memory in user-space, copy the shellcode, then queue the user-mode APC.
    - The user-mode APC is delivered in user-mode.
 
-For more details : [link here]
+For more details : http://rce4fun.blogspot.com/2019/04/circumventing-windows-defender-atps.html
